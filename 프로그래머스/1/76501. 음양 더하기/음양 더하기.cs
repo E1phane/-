@@ -5,10 +5,9 @@ public class Solution {
         int answer = 0;
         for(int i = 0; i < absolutes.Length; i++){
             if(signs[i] == true)
-                absolutes[i] = absolutes[i];
+                answer += absolutes[i];
             else
-                absolutes[i] = -absolutes[i];
-            answer += absolutes[i];
+                answer -= absolutes[i];            
         }
         return answer;
     }
