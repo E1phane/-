@@ -16,36 +16,15 @@ public class Solution {
         
         for(int i = 0; i < timelogs.GetLength(0); i++){
             bool present = true;
-            foreach(int num in schedules){
-            if(startday == 1){
-                timelogs[i,5] = 600;
-                timelogs[i,6] = 600;
+            if(startday < 7){
+                timelogs[i, (6 - startday)] = 600;
+                timelogs[i, (7 - startday)] = 600;
             }
-            if(startday == 2){
-                timelogs[i,4] = 600;
-                timelogs[i,5] = 600;
-            }
-            if(startday == 3){
-                timelogs[i,3] = 600;
-                timelogs[i,4] = 600;
-            }
-            if(startday == 4){
-                timelogs[i,2] = 600;
-                timelogs[i,3] = 600;
-            }
-            if(startday == 5){
-                timelogs[i,1] = 600;
-                timelogs[i,2] = 600;
-            }
-            if(startday == 6){
-                timelogs[i,0] = 600;
-                timelogs[i,1] = 600;
-            }
-            if(startday == 7){
+            else{
                 timelogs[i,6] = 600;
                 timelogs[i,0] = 600;
             }
-        }
+        
             for(int j = 0; j < timelogs.GetLength(1); j++){
                 if(schedules2[i] < timelogs[i,j]){
                     present = false;
